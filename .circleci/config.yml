@@ -1,0 +1,15 @@
+version: 2.0
+jobs:
+ build:
+  docker:
+   - image: mcr.microsoft.com/dotnet/core/sdk:3.0
+  steps:
+    - checkout
+    - run:
+        name: Build App
+        command:
+            dotnet build
+    - run:
+        name: Run Tests
+        command:
+            dotnet test
